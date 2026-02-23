@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0.1" encoding="UTF-8">
+
+    <!-- ── Greetings ── -->
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hello! 👋 I'm HealthBot, your symptom checker assistant. Tell me how you're feeling! Example: "I have a headache" or "I feel fever and cough".</template>
+    </category>
+    <category>
+        <pattern>HI</pattern>
+        <template>Hi there! 🏥 Describe your symptoms and I'll help you understand what might be going on. Type HELP for options.</template>
+    </category>
+    <category>
+        <pattern>HEY</pattern>
+        <template>Hey! 😊 Tell me your symptoms and I'll look them up for you!</template>
+    </category>
+
+    <!-- ── Help ── -->
+    <category>
+        <pattern>HELP</pattern>
+        <template>🆘 Here's what you can ask me:
+• "I have a headache"
+• "I feel fever"
+• "I have cough and cold"
+• "I feel chest pain"
+• "I have nausea"
+• "I feel tired"
+• "What are symptoms of diabetes?"
+• "I have back pain"
+Type your symptom naturally and I'll help!</template>
+    </category>
+
+    <!-- ── I have / I feel / I am having patterns ── -->
+    <category>
+        <pattern>I HAVE *</pattern>
+        <template><srai>CHECK SYMPTOM <star/></srai></template>
+    </category>
+    <category>
+        <pattern>I FEEL *</pattern>
+        <template><srai>CHECK SYMPTOM <star/></srai></template>
+    </category>
+    <category>
+        <pattern>I AM HAVING *</pattern>
+        <template><srai>CHECK SYMPTOM <star/></srai></template>
+    </category>
+    <category>
+        <pattern>I AM FEELING *</pattern>
+        <template><srai>CHECK SYMPTOM <star/></srai></template>
+    </category>
+    <category>
+        <pattern>I GOT *</pattern>
+        <template><srai>CHECK SYMPTOM <star/></srai></template>
+    </category>
+    <category>
+        <pattern>MY * HURTS</pattern>
+        <template><srai>CHECK SYMPTOM <star/> pain</srai></template>
+    </category>
+    <category>
+        <pattern>MY * IS HURTING</pattern>
+        <template><srai>CHECK SYMPTOM <star/> pain</srai></template>
+    </category>
+    <category>
+        <pattern>SUFFERING FROM *</pattern>
+        <template><srai>CHECK SYMPTOM <star/></srai></template>
+    </category>
+
+    <!-- ── Disease info queries ── -->
+    <category>
+        <pattern>WHAT ARE SYMPTOMS OF *</pattern>
+        <template><srai>DISEASE INFO <star/></srai></template>
+    </category>
+    <category>
+        <pattern>SYMPTOMS OF *</pattern>
+        <template><srai>DISEASE INFO <star/></srai></template>
+    </category>
+    <category>
+        <pattern>TELL ME ABOUT *</pattern>
+        <template><srai>DISEASE INFO <star/></srai></template>
+    </category>
+    <category>
+        <pattern>WHAT IS *</pattern>
+        <template><srai>DISEASE INFO <star/></srai></template>
+    </category>
+
+    <!-- ── Triggers for Python ── -->
+    <category>
+        <pattern>CHECK SYMPTOM *</pattern>
+        <template>FETCH_SYMPTOM:<star/></template>
+    </category>
+    <category>
+        <pattern>DISEASE INFO *</pattern>
+        <template>FETCH_DISEASE:<star/></template>
+    </category>
+
+    <!-- ── Emergency ── -->
+    <category>
+        <pattern>I HAVE CHEST PAIN</pattern>
+        <template>🚨 EMERGENCY ALERT 🚨
+Chest pain can be a sign of a heart attack. Please:
+1. Call 112 (Emergency) or 108 (Ambulance) immediately!
+2. Sit or lie down and rest.
+3. Do NOT drive yourself to the hospital.
+4. If available, chew an aspirin (325mg).
+Stay calm — help is on the way! ❤️</template>
+    </category>
+    <category>
+        <pattern>I FEEL CHEST PAIN</pattern>
+        <template>🚨 EMERGENCY ALERT 🚨
+Chest pain can be serious. Call 112 or 108 immediately! Do not ignore this symptom. ❤️‍🩹</template>
+    </category>
+    <category>
+        <pattern>I CANNOT BREATHE</pattern>
+        <template>🚨 CALL 112 NOW! 🚨 Difficulty breathing is a medical emergency. Get emergency help immediately!</template>
+    </category>
+    <category>
+        <pattern>I CANT BREATHE</pattern>
+        <template>🚨 CALL 112 NOW! 🚨 Difficulty breathing is a medical emergency. Get emergency help immediately!</template>
+    </category>
+
+    <!-- ── Farewells ── -->
+    <category>
+        <pattern>BYE</pattern>
+        <template>Take care of yourself! 💊 Stay healthy and consult a doctor if symptoms persist. Goodbye! 👋</template>
+    </category>
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template>Goodbye! 🌿 Remember: I'm not a substitute for professional medical advice. Stay well!</template>
+    </category>
+    <category>
+        <pattern>THANKS</pattern>
+        <template>You're welcome! 😊 Remember to consult a real doctor for a proper diagnosis. Stay healthy! 💪</template>
+    </category>
+    <category>
+        <pattern>THANK YOU</pattern>
+        <template>Happy to help! 🏥 Always follow up with a qualified healthcare professional. Take care!</template>
+    </category>
+
+    <!-- ── About ── -->
+    <category>
+        <pattern>WHO ARE YOU</pattern>
+        <template>I'm HealthBot 🤖 — an AIML-powered symptom checker chatbot! I use health APIs to give you information about symptoms and possible conditions. I'm NOT a doctor — always consult a medical professional!</template>
+    </category>
+
+    <!-- ── Disclaimer ── -->
+    <category>
+        <pattern>ARE YOU A DOCTOR</pattern>
+        <template>No, I'm not a doctor! 🩺 I'm an AI chatbot that provides general health information. Always consult a qualified healthcare professional for medical advice, diagnosis, or treatment.</template>
+    </category>
+
+    <!-- ── Default fallback ── -->
+    <category>
+        <pattern>*</pattern>
+        <template>I didn't quite understand that. 🤔 Try saying:
+• "I have a headache"
+• "I feel nausea"
+• "Symptoms of flu"
+Type HELP for more options!</template>
+    </category>
+
+</aiml>
