@@ -1,3 +1,4 @@
+#                    win.title("🏥 HealthBot — AIML Symptom Checker")
 import tkinter as tk
 from tkinter import scrolledtext, END
 import requests
@@ -8,7 +9,7 @@ import os
 #  AIML Kernel Setup
 # ─────────────────────────────────────────
 kernel = aiml.Kernel()
-kernel.setQuiet(True)
+#kernel.setQuiet(True)
 
 AIML_FILE = "health.aiml"
 BRAIN_FILE = "health_brain.brn"
@@ -20,8 +21,7 @@ else:
     kernel.saveBrain(BRAIN_FILE)
 
 # ─────────────────────────────────────────
-#  API Config  (API Ninjas — free tier)
-#  Get your key at: https://api-ninjas.com
+#  API Config  ( Google AI studio — free tier)
 # ─────────────────────────────────────────
 API_NINJAS_KEY = "AIzaSyADHqFirmrldCU2zD4FZCpT4LykYwCahBY"   # ← Replace with your key
 
